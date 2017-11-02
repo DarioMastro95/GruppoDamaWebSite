@@ -13,7 +13,10 @@ body {
 
 element.style {
 }
-
+.map{
+    width:400px;
+    height:400px;
+}
 h3{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
