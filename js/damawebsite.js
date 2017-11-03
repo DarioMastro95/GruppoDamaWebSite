@@ -7,10 +7,29 @@ function myMap() {
 }
 
 function Email() {
-  $nome_mittente = document.getElementById("form_name");
-  $mail_mittente = document.getElementById("form_email");
-  $mail_destinatario = "d.mastromarco@hotmail.com";
+<?php 
+//SE IL TASTO INVIA EMAIL E' STATO CLICCATO....
+if(isset($_POST['invia_mail']))
+{
+    $to = "[COLOR=#333333]info@prova.com[/COLOR]";  
+    $subject = "Oggetto";  
+    
+    $body = "Contenuto del modulo:\n\n"; 
+    $body .= "Nome: " . trim(stripslashes($_POST['name'])) . "\n"; 
+    $body .= "email: " . trim(stripslashes($_POST['email'])) . "\n"; 
+    $body .= "Oggetto: " . trim(stripslashes($_POST['subject'])) . "\n"; 
+    $body .= "Messaggio: " . trim(stripslashes($_POST['message'])) . "\n"; 
 
- mail($mail_destinatario, "Oggetto\r\n", "Linea 1\nLinea 2\nLinea 3\r\n");
+    $headers = "MIME-Version: 1.0";
+    $headers .= "Content-type: text/plain; charset=iso-8859-1";
+    $headers .= "From: {$name} <{$from}>";
+    $headers .= "Reply-To: <{$from}>";
+    $headers .= "Subject: {$subject}";
+    $headers .= "X-Mailer: PHP/".phpversion();
+
+    mail($to, $subject, $body, $headers); 
+    Print "<h1> Email inviata correttamente a $to </h1>";
+}
+?>
 
 }

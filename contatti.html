@@ -14,6 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -68,63 +69,29 @@
         <h3>Dove siamo</h3>
         <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2777.4103597994103!2d8.661352415984569!3d45.88310527910815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4785d7ff7bc361d7%3A0xc59d253522dfcbab!2sVia+Aldo+Moro%2C+21032+Caravate+VA!5e0!3m2!1sit!2sit!4v1509182891454" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
         <br> 
-        <form id="contact-form" method="post" action="contact.php" role="form">
-
-        <div class="messages"></div>
-
-        <div class="controls">
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="form_name">Nome *</label>
-                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserire nome*" required="required" data-error="Firstname is required.">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="form_lastname">Cognome *</label>
-                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Inserire cognome *" required="required" data-error="Lastname is required.">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="form_email">Email *</label>
-                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Inserire email*" required="required" data-error="Valid email is required.">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="form_phone">Telefono</label>
-                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Inserire numero di telefono">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="form_message">Messaggio *</label>
-                        <textarea id="form_message" name="message" class="form-control" placeholder="Inserire messaggio..." rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <input type="submit" class="btn btn-success btn-send" value="Invia" onClick="Email()">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-muted"><strong>*</strong> Campi obbligatori.</p>
-                </div>
-            </div>
-        </div>
-        </form> 
+        <form id="main-contact-form" name="contact-form" method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
+<div class="row wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+<div class="col-sm-6">
+<div class="form-group">
+<input type="text" name="name" class="form-control" placeholder="Name" required="required">
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group">
+<input type="email" name="email" class="form-control" placeholder="Email Address" required="required">
+</div>
+</div>
+</div>
+<div class="form-group">
+<input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+</div>
+<div class="form-group">
+<textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
+</div> 
+<div class="form-group">
+<input type="submit" class="btn-submit" name="invia_mail" value="Send Now">
+</div>
+</form> 
     </div>
 
 <!--footer start from here-->
