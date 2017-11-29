@@ -17,15 +17,25 @@ element.style {
     width:400px;
     height:400px;
 }
+.space{
+    padding-top: 20px;
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
 h3{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
 }
 h4{
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 400; 
+    text-align: justify;
+    text-justify: inter-word;
 }
 h5{
     font-family: 'Roboto', sans-serif;
@@ -38,11 +48,10 @@ h5{
     font-weight: 700; 
 }
 
-.spacetonav{
+.spacetonav_chisiamo{
     padding-top: 20px;
     padding-bottom: 100px;
-    text-align: justify;
-    text-justify: inter-word;
+
 }
 
 @media (min-width: 768px){

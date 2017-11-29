@@ -71,32 +71,6 @@
         </div>
         <!-- /.container -->
     </nav>
-<script type="php">
-    <?php 
-//SE IL TASTO INVIA EMAIL E' STATO CLICCATO....
-if(isset($_POST['invia_mail']))
-{
-    $to = "[COLOR=#333333]d.mastromarco@hotmail.com[/COLOR]";  
-    $subject = "Oggetto";  
-    
-    $body = "Contenuto del modulo:\n\n"; 
-    $body .= "Nome: " . trim(stripslashes($_POST['name'])) . "\n"; 
-    $body .= "email: " . trim(stripslashes($_POST['email'])) . "\n"; 
-    $body .= "Oggetto: " . trim(stripslashes($_POST['subject'])) . "\n"; 
-    $body .= "Messaggio: " . trim(stripslashes($_POST['message'])) . "\n"; 
-
-    $headers = "MIME-Version: 1.0";
-    $headers .= "Content-type: text/plain; charset=iso-8859-1";
-    $headers .= "From: {$name} <{$from}>";
-    $headers .= "Reply-To: <{$from}>";
-    $headers .= "Subject: {$subject}";
-    $headers .= "X-Mailer: PHP/".phpversion();
-
-    mail($to, $subject, $body, $headers); 
-    Print "<h1> Email inviata correttamente a $to </h1>";
-}
-?>
-</script>
     <!-- Page Content -->
     <div class="container">
         <br>
@@ -142,68 +116,57 @@ if(isset($_POST['invia_mail']))
                 </a>
             </div>
         </div>
-        
+        <div class="space">
+        </div>
+        <!-- Second row-->
         <div class="row">
-            <hr>
+            <div class="jumbotron">
+                <center>
+                    <p><h2>Gruppo Edile Dama srl nasce, come realtà imprenditoriale, nel 1998 impiegando a dote una già pluridecennale esperienza dei soci nel campo edile sia civile che industriale.</p>
+                    <p><a class="btn btn-primary btn-lg" href="chi_siamo.html" role="button">Chi siamo</a></p></h2>
+                </center>
+            </div>
+        </div>
+        <div class="row">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
                             <img src="img/scavi.jpg" alt="...">
                             <div class="caption">
-                                <h3>Scavi</h3>
-                                <p><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</h4></p>
-                                <p><a href="#" class="btn btn-primary" role="button">Vai</a></p>
+                                <h3><a href ="servizi.html"><center>Scavi</center></a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                            <img src="img/amianto.jpg" alt="...">
+                            <img src="img/smaltimento.jpg" alt="...">
                             <div class="caption">
-                                <h3>Smaltimento amianto</h3>
-                                <p><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</h4></p>
-                                <p><a href="#" class="btn btn-primary" role="button">Vai</a></p>
+                                <h3><a href ="servizi.html"><center>Smaltimento ethernit</center></a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                            <img src="img/ristrutturazione.jpg" alt="...">
+                            <img src="img/ristrutturazioni.jpg" alt="...">
                             <div class="caption">
-                                <h3>Ristruttutrazioni</h3>
-                                <p><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</h4></p>
-                                <p><a href="#" class="btn btn-primary" role="button">Vai</a></p>
+                                <h3><a href ="servizi.html"><center>Ristrutturazioni</center></a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                            <img src="img/manun.png" alt="...">
+                            <img src="img/neve.jpg" alt="...">
                             <div class="caption">
-                                <h3>Manutenzioni</h3>
-                                <p><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</h4></p>
-                                <p><a href="#" class="btn btn-primary" role="button">Vai</a></p>
+                                <h3><a href ="servizi.html"><center>Pronto intervento, sgombero neve</center></a></h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                            <img src="img/industriale.jpg" alt="...">
+                            <img src="img/ediliziaind.jpg" alt="...">
                             <div class="caption">
-                                <h3>Edilizia industriale</h3>
-                                <p>
-                                    <h4>
-                                        <li>Manutenzioni</li>
-                                        <li>Assistenza costruzione immobili</li>
-                                        <li>Formazione basamenti per macchinari</li>
-                                        <li>Opere di fognatura</li>
-                                        <li>Fornitura e posa di nuove coperture</li>
-                                        <li>Sistemazione piazzali</li>
-                                        <br>
-                                    </h4>
-                                </p>
-                                <p><a href="#" class="btn btn-primary" role="button">Vai</a></p>
+                                <h3><a href ="servizi.html"><center>Edilizia industriale</center></a></h3>
                             </div>
                         </div>
                     </div>
@@ -211,19 +174,7 @@ if(isset($_POST['invia_mail']))
                         <div class="thumbnail">
                             <img src="img/edilizia.jpg" alt="...">
                             <div class="caption">
-                                <h3>Edilizia civile</h3>
-                                <p>
-                                    <h4>
-                                        <li>Ristrutturazioni</li>
-                                        <li>Manutenzioni</li>
-                                        <li>Rifacimento coperture</li>
-                                        <li>Impermeabilizzazioni</li>
-                                        <li>Opere di fognatura</li>
-                                        <li>Fornitura e posa finestre a tetto</li>
-                                        <li>Fornitura e posa di rivestimenti</li>
-                                    </h4>
-                                </p>
-                                <p><a href="#" class="btn btn-primary" role="button">Vai</a></p>
+                                <h3><a href ="servizi.html"><center>Edilizia civile</center></a></h3>
                             </div>
                         </div>
                     </div>
@@ -243,9 +194,8 @@ if(isset($_POST['invia_mail']))
         <li><a class="navbarfont" href="#">Gruppo edile dama.it</a></li>
         <li><a class="navbarfont" href="#">Chi siamo</a></li>
         <li><a class="navbarfont" href="#">Servizi</a></li>
-        <li><a class="navbarfont" href="#">Faq's</a></li>
-        <li><a class="navbarfont" href="#">Contattti</a></li>
-        <li><a class="navbarfont" href="#">Dove siamo</a></li>
+        <li><a class="navbarfont" href="#">Galleria</a></li>
+        <li><a class="navbarfont" href="contatti.html">Contatti</a></li>
       </ul>
     </div>
   </div>
