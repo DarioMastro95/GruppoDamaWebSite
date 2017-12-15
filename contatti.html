@@ -67,31 +67,41 @@
     <div class="container">
         <br>
         <h3>Dove siamo</h3>
-        <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2777.4103597994103!2d8.661352415984569!3d45.88310527910815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4785d7ff7bc361d7%3A0xc59d253522dfcbab!2sVia+Aldo+Moro%2C+21032+Caravate+VA!5e0!3m2!1sit!2sit!4v1509182891454" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2777.4103597994103!2d8.661352415984569!3d45.88310527910815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4785d7ff7bc361d7%3A0xc59d253522dfcbab!2sVia+Aldo+Moro%2C+21032+Caravate+VA!5e0!3m2!1sit!2sit!4v1509182891454" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
         <br> 
-        <form id="main-contact-form" name="contact-form" method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
-<div class="row wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-<div class="col-sm-6">
-<div class="form-group">
-<input type="text" name="name" class="form-control" placeholder="Name" required="required">
-</div>
-</div>
-<div class="col-sm-6">
-<div class="form-group">
-<input type="email" name="email" class="form-control" placeholder="Email Address" required="required">
-</div>
-</div>
-</div>
-<div class="form-group">
-<input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
-</div>
-<div class="form-group">
-<textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
-</div> 
-<div class="form-group">
-<input type="submit" class="btn-submit" name="invia_mail" value="Send Now">
-</div>
-</form> 
+        <form id="contactForm" name="sentMessage" novalidate>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control input-lg" id="name" type="text" placeholder="Nome *" required>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control input-lg" id="email" type="email" placeholder="Email *" required>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea class="form-control input-lg" id="message" rows="4" cols="25" placeholder="Messaggio *" required></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <label for="consenso">
+                                Inviandoci un messaggio acconsenti al trattamento dei dati personali. <br><a href="privacy.html" class="link-form" target="_blank">Leggi l'informativa completa.</a>
+                            </label>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 text-center">
+                    <div id="success"></div>
+                    <button type="submit" class="btn btn-default"><i class="fa fa-paper-plane"></i> INVIA</button>
+                </div>
+            </div>
+        </form>
     </div>
 
 <!--footer start from here-->
@@ -119,6 +129,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/damawebsite.js"></script>
 
 </body>

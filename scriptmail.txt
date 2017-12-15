@@ -1,10 +1,30 @@
-//Custom javascript
+<?php
+define('REGISTER', 'dama.it');
 
-function myMap() {
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: new google.maps.LatLng(51.5, -0.2),zoom: 10};
-  var map = new google.maps.Map(mapCanvas, mapOptions);
+// Check for empty fields
+if(empty($_POST['name'])      ||
+    empty($_POST['email'])     ||
+    empty($_POST['message'])   ||
+    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+{
+    echo "No arguments Provided!";
+    return false;
 }
+
+$name = strip_tags(htmlspecialchars($_POST['name']));
+$email_address = strip_tags(htmlspecialchars($_POST['email']));
+$phone = strip_tags(htmlspecialchars($_POST['phone']));
+$message = strip_tags(htmlspecialchars($_POST['message']));
+
+// Create the email and send the message
+$email_subject = "Richiesta di contatto da:  $name";
+$email_body = "Hai ricevuto un nuovo messaggio dal form di contatti del tuo sito.\n\n"."Ecco di dettagli:\n\nNome: $name\n\nEmail: $email_address\n\nMessaggio:\n$message";
+$headers = "From: contatto-sito@".DOMAIN."\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers .= "Reply-To: $email_address";
+
+mail('email@email.it',$email_subject,$email_body,$headers);
+return true;
+?>
 
 $(function() {
 
@@ -33,8 +53,7 @@ email: email,
 message: message
 },
 cache: false,
-success: function(response) {
-console.log(response);
+success: function() {
 // Success message
 $('#success').html("<div class='alert alert-success'>");
     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -69,6 +88,8 @@ e.preventDefault();
 $(this).tab("show");
 });
 });
+
+
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
 $('#success').html('');
