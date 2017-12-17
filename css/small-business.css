@@ -20,6 +20,11 @@ element.style {
 .space{
     padding-top: 20px;
 }
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
 h2{
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
@@ -54,7 +59,10 @@ h5{
 }
 .spacetonav_mezzi{
     padding-top: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
+}
+.spacetofoot{
+    padding-bottom: 35px;
 }
 
 
