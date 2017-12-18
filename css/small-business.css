@@ -150,6 +150,9 @@ body {
     .navbar-collapse.collapse {
         display: none!important;
     }
+    .collapse.in{
+        display:block !important;
+    }
     .navbar-nav>li {
         float: none;
     }
@@ -158,6 +161,7 @@ body {
         padding-bottom: 10px;
     }
 }
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
 footer { background-color:#0c1a1e;  font-family: 'Open Sans', sans-serif; }
