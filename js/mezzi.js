@@ -35,8 +35,8 @@ $(document).ready(function() {
                                 ,"Accessorio per Manitou (cesta orientabile ed estensibile)"
                                 ,""
                                 ,""
-                                ,""
-                                ,"");
+                                ,"Accessorio per Manitou (gru con verricello)"
+                                ,"Piattaforma elevabile (sbraccio 19 mt; portata 120/200kg)");
   for (var i = 1; i <17; i++) {
     $('#contenuto').append('<img id="'+i+'img"class="myImg " src="img/mezzi/'+i+'.jpg" alt="'+descrizioni[i]+'" width="300" height="300"><div id="'+i+'m" class="modal"><span id="span'+i+'"class="close">&times;</span><img class="modal-content img01" id="'+i+'modalimg"><div id="caption'+i+'"class="caption"></div></div>')
   }
